@@ -1,0 +1,116 @@
+
+@import 'mixins.less';
+
+@appBg: url('../img/bg_app2.png');
+@boxBgColor: #322;
+@boxFace: #545;
+@boxContent: #767;
+@boxFocusHl: #878;
+@iconText: #ede;
+@boxText: #333;
+
+@outer_margin: 3px;
+@outer_radius: 5px;
+
+@inner_margin: 5px;
+@inner_radius: 3px;
+
+* { 
+	box-sizing: border-box; 
+	margin: 0; 
+	padding: 0 
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	cursor: default;
+	background-color: @boxBgColor;
+	background-image: @appBg;
+	overflow: hidden;
+	font-family: Arial;
+	font-size: 13px;
+	line-height: 17px;
+}
+
+.wrapper {
+	display: flex;  
+	flex-direction: column;
+	height: 100%;
+	padding: 10px;
+}
+
+.box {
+	background: @boxFace;
+	border-radius: @outer_radius;
+	position: relative;
+
+	> .title-bar {
+		background: darken( @boxFocusHl, 5% );
+		color: @iconText;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		height: 23px;
+		margin: @inner_margin;
+		border-radius: @inner_radius @inner_radius 0 0;
+		padding: 3px 3px;
+		text-shadow: 0px 1.5px 0px @boxFace;
+	}
+	> .content {
+		background: @boxFocusHl;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		margin: @inner_margin;
+		border-radius: @inner_radius;
+		box-shadow: inset 1px 1px 1px lighten( @boxFocusHl, 5% ),
+					1px 1px 0px darken( @boxFocusHl, 15% );
+	}
+	> .title-bar + .content {
+		top: 23px;
+		border-radius: 0 0 @inner_radius @inner_radius;
+	}
+	> .tab-row + .content {
+		top: 23px;
+	}
+}
+
+header {
+	height: 37px;
+	margin-bottom: @outer_margin;
+}
+
+footer {
+	height: 37px;
+	margin-top: @outer_margin;
+}
+
+main {
+	display: flex;
+    flex-direction: row;
+    flex: auto;
+
+	nav {
+		width: 237px;
+		margin-right: @outer_margin;
+	}
+	content {
+		flex: auto;
+	}
+	aside {
+		width: 213px;
+		margin-left: @outer_margin;
+	}
+}
+
+
+
