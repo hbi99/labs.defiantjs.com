@@ -39,7 +39,7 @@ var include_options = {
 		html    : ['./src/**/*.{htm,svg}', './src/index.htm'],
 		scripts : ['./src/res/js/site.js', './src/res/js/*.js', '!./src/res/js/*.min.js'],
 		styles  : ['./src/res/css/site.less', './src/res/css/*.less'],
-		images  : ['./src/res/img/**/*.{jpg,jpeg,png,gif,webp}']
+		images  : ['./src/res/img/**/*.{jpg,jpeg,png,gif,webp,svg}']
 	},
 	// path to where dev files should be placed
 	destPaths = {
